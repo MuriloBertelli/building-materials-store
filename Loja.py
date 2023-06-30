@@ -21,13 +21,13 @@ class Tela(BoxLayout):
             self.ids.tx1.focus = True
         if situation:
             if produtos == 'Martelo':
-                self.total += int(self.ids.tx1.text) * self.valores['Martelo']
+                self.total = int(self.ids.tx1.text) * self.valores['Martelo']
             if produtos == 'Marreta':
-                self.total += int(self.ids.tx2.text) * self.valores['Marreta']
+                self.total = int(self.ids.tx2.text) * self.valores['Marreta']
             if produtos == 'Motocerra':
-                self.total += int(self.ids.tx3.text) * self.valores['Motocerra']
+                self.total = int(self.ids.tx3.text) * self.valores['Motocerra']
             if produtos == 'Cortador de grama':
-                self.total += int(self.ids.tx4.text) * self.valores['Cortador de grama']
+                self.total = int(self.ids.tx4.text) * self.valores['Cortador de grama']
 
     def pay(self, tip):
         if tip == 'A vista (-5%)':
