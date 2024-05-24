@@ -52,7 +52,7 @@ class Tela(BoxLayout):
         self.ids.sp1.text = 'pagamento'
         self.ids.total.text = 'A pagar R$ '
 
-
+#
 class lojaApp(App):
     def build(self):
         Window.title = 'Loja'
