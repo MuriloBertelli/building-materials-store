@@ -1,0 +1,171 @@
+#:kivy 2.0
+<Tela>
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'images/Fundo.jpg'
+           
+
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint: (None,None)
+        width: 400
+        height: 60    
+        Label:
+            markup:True
+            size_hint: (None,None)
+            text:'[color=#D8BFD8]Cliente:[/color]'
+            width: 250
+            height: 40         
+        TextInput:
+            size_hint: (None,None)
+            height: 40
+            width: 250
+            id: nome 
+    Label:
+        markup: True
+        id: welcon
+        font_size: 25
+        color: 1, 1, 1, 1
+        width:400
+        height: 40             
+    BoxLayout:
+        Label:
+            markup:True
+            text:'[color=#8B4513] Material de contrução [/color]'
+            font_size: 40
+           
+    BoxLayout:
+        height: 40
+        size_hint: (None,None)
+     
+        Label:
+            markup:True
+            height: 40
+            text:'[color=#800000]Opções[/color]'
+            font_size: 25
+            width: 250  
+            size_hint: (None,None) 
+            color: 1,1,0,1
+        Label:
+            markup: True
+            height: 40        
+            text:'[color=#6A5ACD]Quantidade[/color]'
+            font_size: 25            
+            width:150
+            size_hint: (None,None)
+            color: 1,1,0,1
+    GridLayout:
+        rows: 6
+        cols:4
+
+        CheckBox:
+            id: id1
+            on_active: root.on(self.active,lb1.text)
+            color: 0, 0, 0, 1
+            
+        Image:
+            source: 'images/Martelo.jpg'
+            size_hint: None, None
+            size: 40, 40
+        Label:
+            id:lb1
+            markup: True
+            text:'[color=#4682B4] Martelo[/color]'            
+            width: 250
+            height:40
+            size_hint:(None,None)
+        TextInput:
+            id: tx1
+            width: 100
+            height:40
+            size_hint:(None,None)
+
+        CheckBox:
+            color: 0, 0, 0, 1
+            id: id2
+            on_active: root.on(self.active,lb2.text)
+        Image:
+            source: 'images/Marreta.jpg'
+            size_hint: None, None
+            size: 40, 40  
+        Label:
+            id:lb2
+            markup: True
+            text:'[color=#4682B4]Marreta [/color]'
+            width: 250
+            height:40
+            size_hint:(None,None)
+        TextInput:
+            id: tx2
+            width: 100
+            height:40
+            size_hint:(None,None)
+ 
+        CheckBox:
+            
+            color: 0, 0, 0, 1
+            id: id3
+            on_active: root.on(self.active,lb3.text)
+        Image:
+            source: 'images/motocerra.jpg'
+            size_hint: None, None
+            size: 40, 40    
+        Label:
+            id:lb3
+            markup: True
+            text:'[color=#4682B4]Motocerra [/color]'
+            width: 250
+            height:40
+            size_hint:(None,None)
+        TextInput:
+            id: tx3
+            width: 100
+            height:40
+            size_hint:(None,None)            
+
+        CheckBox:
+            
+            color: 0, 0, 0, 1
+            id: id4
+            on_active: root.on(self.active,lb4.text)
+        Image:
+            source: 'images/Cortador de grama.jpg'
+            size_hint: None, None
+            size: 40, 40     
+        Label:
+            id:lb4
+            markup: True
+            text:'[color=#4682B4]Cortador de grama [/color]'
+            width: 250
+            height:40
+            size_hint:(None,None)
+        TextInput:
+            id: tx4
+            width: 100
+            height:40
+            size_hint:(None,None)
+
+                   
+    BoxLayout:
+        Spinner:
+            id:sp1
+            text: 'pagamento'
+            values: ('A vista (-5%)','2 vezes (+2,5%)','28 dias (+8%)')
+            width: 150
+            height: 40
+            size_hint: (None,None)
+            on_text: root.pay(self.text)
+        Label:
+            text:'A pagar R$ '
+            id: total
+            width: 150
+            height: 40
+            size_hint: (None,None)            
+        Button:
+            text:'Limpa'
+            width:100
+            height:40
+            size_hint:(None,None)
+            on_press: root.clean()
